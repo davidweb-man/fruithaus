@@ -1287,3 +1287,102 @@ $RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))
 .Q_ghU{margin-right:-15px;padding-right:15px;margin-bottom:-7.5px;padding-bottom:7.5px}.vkuMN{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:content-box;background:transparent;border:none;padding:0;margin:0;}.vkuMN:focus-visible{outline:2px solid #027e6f;outline-offset:2px;border-radius:50%}
 .TACLT{z-index:0}
 </style><div data-grammarly-part="outer-elements" class="f1l1o3bf" style="z-index: 2147483647; position: absolute; top: 0px; left: 0px; width: 100%;"><div data-gds-theme="light"><div data-origin-theme="grammarly" data-origin-mode="light"><link rel="stylesheet" type="text/css" href="chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/css/designSystem.styles.css"><div style="position: fixed; visibility: hidden;"></div><div></div><div data-grammarly-part="outer-elements-wrapper" style="position: relative; z-index: 2147483645;"><div data-name="outer-elements-portal"></div></div><div><div data-grammarly-part="expanded-gbutton" style="top: 551.333px; left: 864.01px; position: absolute; transform: translate(-100%, -100%); z-index: 2147483644;"><div style="transform-origin: right center; transform: scale(0.866667);"><div data-purpose="animation-wrapper"></div></div></div></div><div></div><div data-grammarly-part="fonts-preloader" class="f1h65fgz"><span class="f12mucje"></span><span class="fasx5w9"></span></div><link rel="stylesheet" type="text/css" href="chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/css/cheetah.styles.css"><div aria-hidden="true" style="width: 1px; height: 1px; top: -1px; left: -1px; overflow: hidden; position: fixed;"><slot name="hidden"></slot></div></div></div></div><div data-origin-mode="light" data-origin-theme="grammarly" data-gds-theme="light" style="position: fixed; top: 0px; left: 0px; width: 0px; height: 0px; z-index: 2147483647;"></div></template></grammarly-popups></html>
+(function () {
+  var WHATSAPP_NUMBER = "2348031234567";   // <- put your number here
+
+  function naira(n) { return "₦" + n.toLocaleString("en-NG"); }
+
+  /* ---------- Mobile menu ---------- */
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("nav");
+
+  function closeMenu() {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = "☰";
+  }
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var isOpen = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      toggle.textContent = isOpen ? "✕" : "☰";
+    });
+    nav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
+  }
+
+  /* ---------- Order summary ---------- */
+  var selects = document.querySelectorAll(".qty");
+  var summary = document.getElementById("summary");
+  var totalEl = document.getElementById("total");
+
+  function getItems() {
+    var items = [];
+    selects.forEach(function (s) {
+      var qty = parseInt(s.value, 10) || 0;
+      if (qty > 0) {
+        var price = parseInt(s.dataset.price, 10);
+        items.push({ name: s.dataset.product, qty: qty, line: qty * price });
+      }
+    });
+    return items;
+  }
+
+  function render() {
+    var items = getItems();
+    var total = 0;
+    if (!items.length) {
+      summary.innerHTML = '<p class="empty">Choose quantities above to start your order.</p>';
+    } else {
+      summary.innerHTML = items.map(function (i) {
+        total += i.line;
+        return '<div class="summary-item"><span>' + i.qty + " × " + i.name +
+               "</span><span>" + naira(i.line) + "</span></div>";
+      }).join("");
+    }
+    totalEl.textContent = naira(total);
+  }
+
+  selects.forEach(function (s) { s.addEventListener("change", render); });
+  render();
+
+  /* ---------- Send order to WhatsApp ---------- */
+  var form = document.getElementById("orderForm");
+  var errorEl = document.getElementById("error");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();                       // stops the jump to the top
+    var items = getItems();
+
+    if (!items.length) {
+      errorEl.textContent = "Please choose at least one drink above before continuing.";
+      errorEl.hidden = false;
+      return;
+    }
+    errorEl.hidden = true;
+
+    var total = items.reduce(function (sum, i) { return sum + i.line; }, 0);
+    var name = document.getElementById("name").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var area = document.getElementById("area").value.trim();
+    var note = document.getElementById("note").value.trim();
+
+    var lines = ["Hello Fruithaus, I'd like to place an order:", ""];
+    items.forEach(function (i) {
+      lines.push(i.qty + " x " + i.name + " - " + naira(i.line));
+    });
+    lines.push("", "Subtotal: " + naira(total), "");
+    lines.push("Name: " + name, "Phone: " + phone, "Delivery area: " + area);
+    if (note) lines.push("Note: " + note);
+
+    var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+    var win = window.open(url, "_blank");
+    if (!win) window.location.href = url;     // fallback if the browser blocks the new tab
+  });
+
+  /* ---------- Footer year ---------- */
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+})();
