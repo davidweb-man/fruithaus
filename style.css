@@ -77,3 +77,27 @@
     position: relative;
   }
 }
+.star { display: none; }
+const WHATSAPP_NUMBER = "2348140412877"; // your number: country code, no +, no leading 0
+
+document.getElementById("orderForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const lines = ["Hello Fruithaus, I would like to place an order:", ""];
+
+  this.querySelectorAll("input, select, textarea").forEach(function (field) {
+    const value = field.value.trim();
+    if (!value) return;
+
+    const label = field.closest("label");
+    let name = label ? label.childNodes[0].textContent : (field.name || field.id);
+    name = name.replace("*", "").trim();
+
+    lines.push(name + ": " + value);
+  });
+
+  const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+
+  const win = window.open(url, "_blank");
+  if (!win) window.location.href = url;   // fallback if the browser blocks the new tab
+});
