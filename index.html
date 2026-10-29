@@ -1,28 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#243c2d"><meta name="description" content="Fruithaus drinks — nature pressed into perfection.">
-  <title>Fruithaus | Nature Pressed into Perfection</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fruithaus | Fruit and nut drinks, Benin City</title>
+  <meta name="description" content="Fruithaus is a fruit and nut drink brand in Benin City, Nigeria. Watermelon, pineapple, tigernut and zobo in 50 cl bottles. Order on WhatsApp.">
+  <meta name="theme-color" content="#EEDCB8">
+
+  <!-- Fonts (optional: if you are offline the site falls back to Georgia and system fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="announcement">A little freshness for your everyday</div>
-  <header class="header"><a class="brand" href="#home"><img class="brand-logo" src="images/fruitlogo.jpg" alt="Fruithaus logo"></span><small></small></span></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav id="nav"><a href="#drinks">Our drinks</a><a href="#approach">Our approach</a><a href="#story">Our story</a><a class="nav-cta" href="#order">Order now ↗</a></nav></header>
-  <main>
-    <section class="hero wrap" id="home"><div class="hero-copy"><p class="eyebrow">— YOUR EVERYDAY REFRESH</p><h1>Good things<br>come <em>naturally.</em></h1><p class="lead">Meet your new favourite sip. Explore the Fruithaus collection, made for moments when you want something refreshing and full of flavour.</p><a class="button dark" href="#drinks">Explore our drinks <span>↘</span></a><p class="little-note">Made with care. Served with joy.</p><div class="stamp"><small>nature pressed<br>into perfection</small></div></div><div class="hero-photo"><img src="images/1.jpg" alt="Fresh juice and citrus fruit arranged on a table"><div class="photo-note">● A fresh perspective on your favourites</div></div></section>
-    <div class="ribbon"><span>FRUIT. FLAVOUR. A LITTLE MOMENT FOR YOU.</span><span>CHOOSE YOUR KIND OF REFRESHMENT.</span></div>
-    <section class="products wrap" id="drinks"><div class="section-head"><div><p class="eyebrow">— THE FRUITHAUS COLLECTION</p><h2>Find your <em>favourite.</em></h2></div><p>Four distinctive flavours. One simple rule: choose what makes your day feel good.</p></div>
-      <div class="grid">
-        <article class="product"><div class="product-photo"><span class="tag">01 / FLORAL & BOLD</span><img src="images/5.jpg" alt="Ruby-red drink served with fresh fruit" loading="lazy"><span class="flavour">The vibrant one</span></div><div class="product-info"><div class="product-title"><h3>Zobo</h3><strong>₦2,500</strong></div><p>A bold, ruby-coloured classic with a distinctive hibiscus character.</p><div class="product-bottom"><small>50 cl bottle</small><label>Qty <select class="qty" data-product="Zobo" data-price="2500" aria-label="Quantity of Zobo"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label></div></div></article>
-        <article class="product"><div class="product-photo"><span class="tag">02 / CREAMY & SMOOTH</span><img src="images/nut.jpg" alt="Creamy plant-based drink in a glass" loading="lazy"><span class="flavour">The mellow one</span></div><div class="product-info"><div class="product-title"><h3>Tigernut</h3><strong>₦3,500</strong></div><p>A creamy, satisfying sip with a naturally nutty flavour.</p><div class="product-bottom"><small>50 cl bottle</small><label>Qty <select class="qty" data-product="Tigernut" data-price="3500" aria-label="Quantity of Tigernut"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label></div></div></article>
-        <article class="product"><div class="product-photo"><span class="tag">03 / TROPICAL & SUNNY</span><img src="images/pine.jpg" alt="Fresh pineapple and pineapple pieces" loading="lazy"><span class="flavour">The sunny one</span></div><div class="product-info"><div class="product-title"><h3>Pineapple Juice</h3><strong>₦2,500</strong></div><p>A tropical favourite with a bright, fruit-forward taste.</p><div class="product-bottom"><small>50 cl bottle</small><label>Qty <select class="qty" data-product="Pineapple Juice" data-price="2500" aria-label="Quantity of Pineapple Juice"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label></div></div></article>
-        <article class="product"><div class="product-photo"><span class="tag">04 / LIGHT & JUICY</span><img src="images/water.jpg" alt="Fresh watermelon slices" loading="lazy"><span class="flavour">The easygoing one</span></div><div class="product-info"><div class="product-title"><h3>Watermelon Juice</h3><strong>₦2,500</strong></div><p>A juicy favourite with a fresh watermelon taste.</p><div class="product-bottom"><small>50 cl bottle</small><label>Qty <select class="qty" data-product="Watermelon Juice" data-price="2500" aria-label="Quantity of Watermelon Juice"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label></div></div></article>
-      </div></section>
-    <section class="approach" id="approach"><div class="approach-photo"><img src="images/mix.jpg" alt="Fresh ingredients arranged on a work surface" loading="lazy"><span>A closer look at what goes into your glass.</span></div><div class="approach-copy"><p class="eyebrow light">— WHAT MATTERS TO US</p><h2>Know what’s<br>in your <em>bottle.</em></h2><p>We believe choosing a drink should feel simple. That means being clear about ingredients, flavour, and what you’re ordering — so you can make a choice that feels right for you.</p><div class="principles"><div><b>01</b><p><strong>Clear information</strong><small>We’ll share ingredient details honestly.</small></p></div><div><b>02</b><p><strong>Flavour first</strong><small>Distinctive drinks made to be enjoyed.</small></p></div><div><b>03</b><p><strong>Thoughtful choices</strong><small>Pick the flavour that suits your moment.</small></p></div></div><small class="disclaimer">Fruit juices can contain naturally occurring sugars. Ask us about ingredients if you have questions before ordering.</small></div></section>
-    <section class="story wrap" id="story"><p class="eyebrow">— A NOTE FROM FRUITHAUS</p><h2>Not just a drink.<br>A little <em>Fruithaus feeling.</em></h2><div class="story-bottom"><p>Fruithaus is built around a simple idea: everyday refreshment can be full of character, care, and flavour. We’re growing this brand one bottle and one customer at a time, and we’d love for you to be part of the journey.</p><a href="#order" class="text-link">Find your flavour ↗</a></div></section>
-    <section class="order-section" id="order"><div class="order-intro"><p class="eyebrow light">— YOUR NEXT FAVOURITE IS CLOSE</p><h2>Ready to make<br>it a <em>Fruithaus day?</em></h2><p>Choose your bottles, tell us where to deliver, and send your order to us on WhatsApp.</p><p class="order-help">↘ Your order opens as a message for you to review and send.</p></div><form id="orderForm" class="order-form"><div class="form-heading"><span>01 / YOUR ORDER</span><small>Easy WhatsApp ordering</small></div><div id="summary"><p class="empty">Choose quantities above to start your order.</p></div><div class="total"><span>Subtotal</span><strong id="total">₦0</strong></div><p class="delivery-note">Delivery fee is not included. We’ll confirm delivery cost and availability on WhatsApp.</p><div class="fields"><label>Your name *<input id="name" autocomplete="name" required placeholder="e.g. Ada"></label><label>Phone number *<input id="phone" type="tel" autocomplete="tel" required placeholder="e.g. 08012345678"></label><label class="wide">Delivery area *<input id="area" required placeholder="Your area or neighbourhood"></label><label class="wide">Anything we should know? <small>(optional)</small><textarea id="note" rows="3" placeholder="Delivery instructions or questions"></textarea></label></div><button class="button gold" type="submit">Continue on WhatsApp <span>↗</span></button><p class="footnote">WhatsApp will open with your order details. You’ll still need to press Send in WhatsApp.</p><p id="error" class="error" role="alert" hidden></p></form></section>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="Fruithaus home">
+        <img src="images/logodark.png" alt="Fruithaus">
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="#drinks">Our Drinks</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#how">How to Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="#" data-whatsapp>Order on WhatsApp</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-toggle" type="button" id="cart-open" aria-haspopup="dialog" aria-controls="cart-drawer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="cart-toggle-label">Your order</span>
+          <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+          <span class="visually-hidden" id="cart-count-sr">Your order, empty</span>
+        </button>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span class="menu-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Good drinks for a more intentional you.</h1>
+          <p class="lead">Watermelon, pineapple, tigernut and zobo, in 50&nbsp;cl bottles from Benin City. Pick what you feel like and send us your order on WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#drinks">Explore Our Drinks</a>
+            <a class="btn btn-outline btn-lg" href="#" data-whatsapp>Order on WhatsApp</a>
+          </div>
+        </div>
+
+        <figure class="hero-media media" data-label="Fruithaus bottles">
+          <img src="images/mix.jpg" alt="The four Fruithaus drinks in 50 cl bottles: watermelon juice, pineapple juice, tigernut milk and zobo." width="900" height="1000" data-fallback>
+          <div class="hero-fallback" aria-hidden="true">
+            <span class="fb-bottle" style="--c:#C23B3B"></span>
+            <span class="fb-bottle" style="--c:#D9A21B"></span>
+            <span class="fb-bottle" style="--c:#E3D2AC"></span>
+            <span class="fb-bottle" style="--c:#6E1B30"></span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="section" id="drinks" aria-labelledby="drinks-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="drinks-title">Our Drinks</h2>
+          <p class="section-intro">Every bottle is 50&nbsp;cl. Set your quantities, add them to your order, and check everything before you continue to WhatsApp.</p>
+        </header>
+
+        <!-- Product cards are built by script.js from the PRODUCTS list -->
+        <div class="product-grid" id="product-grid"></div>
+
+        <p class="delivery-note">Prices are per 50&nbsp;cl bottle. Delivery or pickup is confirmed with you on WhatsApp and is not included in the totals shown here.</p>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="section section-tan" id="story" aria-labelledby="story-title">
+      <div class="container story-grid">
+        <h2 id="story-title">Soda is the default. It doesn't have to be.</h2>
+        <div class="story-body">
+          <p>For a lot of us, the drink we reach for is the one that is already cold and already there. Most of the time we don't really choose it.</p>
+          <p>Fruithaus exists to give you something else to reach for: drinks made from fruit and nuts, from Benin City, that you can pick on purpose.</p>
+          <p>We are not here to tell anyone what to stop drinking. We just want to put another good option on the table, and to be straightforward with you about what is in the bottle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW TO ORDER ============ -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="how-title">How to Order</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Choose your drinks</h3>
+            <p>Set the quantity for each drink and add it to your order. Mix all four if you like.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Review and continue</h3>
+            <p>Check your order and total, then continue to WhatsApp. Your message is written for you.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Confirm with us</h3>
+            <p>Send the message. We confirm availability, delivery or pickup, and payment with you there.</p>
+          </li>
+        </ol>
+        <p class="steps-note">Sending the WhatsApp message does not place or pay for your order. It is only confirmed once we reply to you.</p>
+      </div>
+    </section>
+
+    <!-- ============ INGREDIENTS / PRODUCT INFO ============ -->
+    <section class="section section-tan" id="ingredients" aria-labelledby="ingredients-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="ingredients-title">What's in each bottle</h2>
+          <p class="section-intro">We would rather you ask than guess. If you want to know more about a drink before you order, message us on WhatsApp.</p>
+        </header>
+
+        <!-- Built by script.js from the PRODUCTS list (edit "ingredients" there) -->
+        <div class="info-list" id="info-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <h2 id="cta-title">Choose your drinks. We'll take it from there.</h2>
+        <p class="cta-tagline">Fruithaus &middot; Nature pressed into perfection</p>
+        <div class="cta-actions">
+          <a class="btn btn-light btn-lg" href="#drinks">Choose your drinks</a>
+          <a class="btn btn-outline-light btn-lg" href="#" data-whatsapp>Order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="footer-top"><a class="brand" href="#home"></a><img class="brand-logo" src="images/fruitlogo.jpg" alt="Fruithaus logo"></span></a><p>Good things come naturally.</p><a href="#home">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="year"></span> Fruithaus. Made with care.</span><span>Fresh thinking. Thoughtful refreshment.</span></div></footer>
-</body></html>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logolight.png" alt="Fruithaus">
+      </div>
+
+      <div>
+        <h2 class="footer-title">Contact</h2>
+        <ul class="footer-list">
+          <li>Benin City, Nigeria</li>
+          <li><a href="#" data-whatsapp>Order on WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Explore</h2>
+        <ul class="footer-list">
+          <li><a href="#drinks">Our Drinks</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#how">How to Order</a></li>
+        </ul>
+      </div>
+
+      <!--
+        SOCIAL LINKS (optional)
+        Add your real links here when you have them, for example:
+        <div>
+          <h2 class="footer-title">Follow</h2>
+          <ul class="footer-list">
+            <li><a href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      -->
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Fruithaus. Benin City, Nigeria.</p>
+    </div>
+
+    <!-- Photo strip: shows only the photos that exist (see GALLERY in script.js) -->
+    <div class="gallery" id="gallery" hidden></div>
+  </footer>
+
+  <!-- ============ ORDER DRAWER ============ -->
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" tabindex="-1">
+    <div class="cart-head">
+      <h2 id="cart-title">Your order</h2>
+      <button class="icon-btn" type="button" id="cart-close" aria-label="Close your order">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="cart-body">
+      <div class="cart-empty" id="cart-empty">
+        <p class="cart-empty-title">Nothing in your order yet.</p>
+        <p>Choose a drink and tap &ldquo;Add to Order&rdquo;. You can add more than one.</p>
+        <a class="btn btn-outline" href="#drinks" id="cart-browse">Browse our drinks</a>
+      </div>
+      <ul class="cart-lines" id="cart-lines"></ul>
+    </div>
+
+    <div class="cart-foot" id="cart-foot">
+      <dl class="cart-totals">
+        <div><dt>Total bottles</dt><dd id="cart-bottles">0</dd></div>
+        <div class="cart-total-row"><dt>Product total</dt><dd id="cart-total">&#8358;0</dd></div>
+      </dl>
+      <p class="cart-note">Delivery or pickup is not included. We confirm it with you on WhatsApp.</p>
+      <p class="cart-error" id="cart-error" role="alert" hidden></p>
+      <button class="btn btn-primary btn-block" type="button" id="cart-checkout" disabled>Continue to WhatsApp</button>
+      <button class="link-btn" type="button" id="cart-clear" hidden>Empty order</button>
+    </div>
+  </aside>
+
+  <!-- Polite announcements + small pop-up message -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
